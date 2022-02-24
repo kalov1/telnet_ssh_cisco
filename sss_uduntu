@@ -1,0 +1,20 @@
+sudo su
+apt update 
+ip a
+ssh-keygen 
+cd /root/.ssh
+nano /etc/ssh/sshd_config 
+{
+ PermitRootLogin yes
+ PubkeyAuthentication yes
+ PasswordAuthentication yes
+}
+systemctl restart sshd
+ssh-copy-id root@11.11.11.11
+ssh root@11.11.11.11
+
+если не сработал  
+cd /root/.ssh
+cat id_rsa.pub -копируем от сюда 
+nano autorized_keys -копируете туда 
+systemctl restart sshd 
