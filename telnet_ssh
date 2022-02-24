@@ -1,0 +1,51 @@
+*-номер интерфейса
+на компьютере:
+адрес: 192.168.0.2
+маска: 255.255.255.0
+шлюз: 192.168.0.9
+Подключение по telnet
+Switch:
+en
+conf t
+hostname Switch1
+enable password cisco
+username cisco password cisco
+line console 0
+password cisco
+login local
+exit
+int vlan 1
+ip address 192.168.0.10 255.255.255.0
+no sh
+exit
+int f0/*(смотрящий на роутер)
+switchport mode trunk
+exit
+line vty 0 4
+transport input telnet
+login authentification default (login local)
+logging synchronous
+exit
+do wr
+_________________
+Router:
+en
+conf t
+hostname Router1
+enable password cisco
+username cisco password cisco
+line console 0
+password cisco
+login local
+exit
+int g0/0/*.1
+encapsulation Dot1Q 1
+ip address 192.168.0.9 255.255.255.0
+no sh
+exit
+line vty 0 4
+transport input telnet
+login authentification default
+logging synchronous
+exit
+do wr
