@@ -1,0 +1,3 @@
+int f0/4
+switchport mode trunk
+switchport trunk allowed valn 2,3 

@@ -1,0 +1,7 @@
+show mac-address-table -таблица мак адресов 
+show arp -таблица арп
+show flash -таблица команд
+show running-config -таблица стартовая
+show ip interface brief -таблица портов
+show ip route -таблица маршрутизаций 
+show vlan -таблица вланов 

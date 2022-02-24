@@ -1,0 +1,20 @@
+int serial 1/0         /  настройка серий порта      
+ip add	10.10.10.10 255.255.255.0
+description LINKTO R!  /названия описаний 
+no shutdown            /включения порта 
+
+ip route 192.168.0.0 255.255.255.0 192.168.1.1 
+                       / настройка маршрутизаций 
+ip default-geteway 10.0.10.10 
+                       /добовления шлюза 
+int g0/0/0 
+inteface loopback 0    / создания лукбека
+ip add	10.0.0.1 255.255.255.0 
+no shutdown                 
+                                  
+int g0/0/0                
+int g0/0/0.20          /создания подинтерфейса   
+encapsulation dot1Q 2 
+ip add 10.11.11.11 255.255.255.0
+no sh 
+              

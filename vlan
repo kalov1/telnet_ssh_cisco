@@ -1,0 +1,13 @@
+en 
+conf t
+vlan 2
+name vlan2
+exit
+int vlan 2
+ip add	1.1.1.11
+no sh
+ 
+int rauge f0/1-20 
+switchport mode access 
+switchpor access vlan 2
+ 

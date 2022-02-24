@@ -1,0 +1,7 @@
+en 
+conf t 
+ip dhcp pool 444     / имя пула 
+network 172.23.23.0 255.255.255.0 \диопозон
+default-router 172.23.23.1 /наш шлюз
+dns-server 8.8.8.8
+ip dhcp excluded -address 172.23.23.1 /исключения адресов  

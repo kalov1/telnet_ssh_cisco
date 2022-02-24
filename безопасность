@@ -1,0 +1,11 @@
+en 
+conf t
+enable password cisco -cisco это пороль на привилирогировый режим 
+enable secret itsasecret -шифровка пороля  привилирогировый режим
+service password-encryption --шифровка пороля  привилирогировый режим и консоль
+
+line console 0 -переходим в косоль
+password cisco -cisco это пороль на консоль
+login local
+username wsruser privilege 15 secret network - создания пользовотеля wsruser пороль network
+
